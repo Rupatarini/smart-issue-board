@@ -1,0 +1,690 @@
+/* Global Styles for Smart Issue Board */
+
+:root {
+  --primary-color: #2563eb;
+  --primary-dark: #1e40af;
+  --primary-light: #dbeafe;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --dark-color: #1f2937;
+  --light-color: #f9fafb;
+  --border-color: #e5e7eb;
+  --text-color: #111827;
+  --text-secondary: #6b7280;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Main App Container */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 20px 0;
+}
+
+.app-header {
+  background: white;
+  border-bottom: 3px solid var(--primary-color);
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.app-header .user-info {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Auth Pages Styling */
+.auth-container {
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 45px 40px;
+  background: #1a1a2e;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border-top: 4px solid var(--primary-color);
+}
+
+.auth-container h2 {
+  margin-bottom: 35px;
+  color: white;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: #b0b0b0;
+  margin-bottom: 28px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: white;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #404050;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background-color: #2a2a3e;
+  color: white;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #808080;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #353550;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Button Styling */
+button {
+  padding: 11px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+  margin-right: 10px;
+}
+
+.btn-success:hover:not(:disabled) {
+  background-color: #059669;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-warning {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.btn-warning:hover:not(:disabled) {
+  background-color: #d97706;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #4b5563;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Auth Page Links */
+.auth-footer {
+  margin-top: 28px;
+  text-align: center;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+}
+
+.auth-footer a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.auth-footer a:hover {
+  color: #60a5fa;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: #505060;
+  font-size: 0.85rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: #404050;
+}
+
+.auth-divider::before {
+  margin-right: 10px;
+}
+
+.auth-divider::after {
+  margin-left: 10px;
+}
+
+/* Alert Messages */
+.error-message {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ff9999;
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  border-left: 4px solid var(--danger-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.success-message {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #66d9a3;
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  border-left: 4px solid var(--success-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.warning-message {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f5d876;
+  padding: 18px;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  border-left: 4px solid var(--warning-color);
+  font-size: 0.9rem;
+}
+
+.warning-message h4 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f5d876;
+}
+
+.warning-message ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.warning-message li {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* Dashboard Styling */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  gap: 20px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.dashboard-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Filters Section */
+.filters-section {
+  background: white;
+  padding: 22px 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: var(--text-color);
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+.filter-group select {
+  padding: 9px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+/* Issue Card */
+.issue-card {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+  border-left: 5px solid var(--primary-color);
+}
+
+.issue-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.issue-card.high {
+  border-left-color: var(--danger-color);
+}
+
+.issue-card.medium {
+  border-left-color: var(--warning-color);
+}
+
+.issue-card.low {
+  border-left-color: var(--success-color);
+}
+
+.issue-card h3 {
+  margin: 0 0 12px 0;
+  color: var(--text-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.issue-card p {
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.issue-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin: 18px 0;
+  padding: 18px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.issue-meta span {
+  display: flex;
+  flex-direction: column;
+}
+
+.issue-meta strong {
+  color: var(--text-color);
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.issue-status {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-open {
+  background-color: #dbeafe;
+  color: #0c4a6e;
+}
+
+.status-in-progress {
+  background-color: #fef3c7;
+  color: #78350f;
+}
+
+.status-done {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.issue-priority {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 8px;
+}
+
+.priority-high {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.priority-medium {
+  background-color: #fef3c7;
+  color: #78350f;
+}
+
+.priority-low {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+/* Issue Status Update */
+.issue-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.issue-actions select {
+  padding: 9px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.issue-actions select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.empty-state a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.empty-state a:hover {
+  color: var(--primary-dark);
+}
+
+/* Create Issue Page */
+.create-issue-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 45px 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+}
+
+.create-issue-container h2 {
+  margin-bottom: 35px;
+  color: var(--text-color);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.similar-count {
+  display: inline-block;
+  background-color: #fef3c7;
+  color: #92400e;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .auth-container {
+    margin: 40px 15px;
+    padding: 35px 25px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .dashboard-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .dashboard-buttons button,
+  .dashboard-buttons a {
+    width: 100%;
+  }
+
+  .filters-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group select {
+    width: 100%;
+  }
+
+  .issue-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .issue-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .issue-actions select {
+    width: 100%;
+  }
+
+  .create-issue-container {
+    margin: 40px 15px;
+    padding: 35px 25px;
+  }
+
+  .dashboard-header h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.issue-card {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Link Styling */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
